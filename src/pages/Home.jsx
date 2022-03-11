@@ -9,7 +9,7 @@ import {
   Link,
 } from "@mui/material";
 import Gustavo from "../assets/img/avatar.jpeg";
-import { Box, height } from "@mui/system";
+import { Box } from "@mui/system";
 import { Icone } from "../UI/components.js";
 import GitHubRepo from "../components/GitHubRepo";
 import InstagramIcon from "@mui/icons-material/Instagram";
