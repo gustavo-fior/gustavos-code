@@ -127,15 +127,15 @@ const Home = () => {
               />
               <GitHubRepo
                 name="news-react"
-                link="http://brazilnews.herokuapp.com"
+                link="https://branews.vercel.app/"
               />
               <GitHubRepo
                 name="alura-styled-components"
-                link="http://bancobyte.herokuapp.com"
+                link="https://bytebank-neon.vercel.app/"
               />
               <GitHubRepo
                 name="gustavos-code"
-                link="http://gustavodev.herokuapp.com"
+                link="https://gustavo-woad.vercel.app/"
               />
             </Grid>
           </Grid>
