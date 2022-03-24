@@ -17,10 +17,10 @@ function App() {
   return (
     <>
       <ThemeProvider theme={tema ? light : dark}>
-        <BtnTema onClick={toggleTema}>
-          <ThemeSwitcher tema={tema} />
-        </BtnTema>
-        <Home />
+          <BtnTema onClick={toggleTema}>
+            <ThemeSwitcher tema={tema} />
+          </BtnTema>
+          <Home />
       </ThemeProvider>
     </>
   );

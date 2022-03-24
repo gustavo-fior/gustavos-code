@@ -14,7 +14,7 @@ const GitHubRepo = ({ name, link }) => {
   }, [name]);
 
   return (
-    <Paper sx={{ padding: 2, margin: 1, backgroundColor: theme.body }}>
+    <Paper sx={{ padding: 2, margin: 2, backgroundColor: theme.body }}>
       <Grid container>
         <Grid sx={{ marginTop: 2 }} item md={0.8}>
           <Icone src={Github} />
@@ -28,7 +28,7 @@ const GitHubRepo = ({ name, link }) => {
         <Grid item md={1.5}>
           <Button
             href={link}
-            sx={{ marginTop: 1, backgroundColor: theme.button, textAlign: "center" }}
+            sx={{ backgroundColor: theme.button, textAlign: "center" }}
             variant="contained"
             size="small"
           >

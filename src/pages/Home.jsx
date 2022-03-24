@@ -37,7 +37,7 @@ import styled, { useTheme } from "styled-components";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.body};
-  height: 100vh;
+  height: 100%;
 `;
 
 const Home = () => {
@@ -45,12 +45,8 @@ const Home = () => {
 
   return (
     <Body>
-      <Container>
-        <Box
-          display="flex"
-          justifyContent="center"
-          position="relative"
-        >
+      <Container sx={{ backgroundColor: theme.body }}>
+        <Box display="flex" justifyContent="center" position="relative">
           <Stack marginTop={5} alignItems="center">
             <Typography color={theme.text} variant="h2">
               Hi! I'm <strong>Gustavo</strong>
@@ -83,10 +79,17 @@ const Home = () => {
             </Typography>
           </Stack>
         </Box>
-        <Paper sx={{ marginTop: 3, backgroundColor: theme.inside, color: theme.text}} elevation={5}>
+        <Paper
+          sx={{
+            marginTop: 3,
+            backgroundColor: theme.inside,
+            color: theme.text,
+          }}
+          elevation={5}
+        >
           <Grid padding={5} container>
             <Grid item md={4}>
-              <Stack direction="row" spacing={3} marginTop={3} height={50}>
+              <Stack direction="row" spacing={3} height={50}>
                 <Typography marginTop={1}>Databases:</Typography>
                 <Icone src={MySql} />
                 <Icone src={Postgres} />
