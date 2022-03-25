@@ -1,21 +1,6 @@
 import React from "react";
-import {
-  Avatar,
-  Container,
-  Grid,
-  Paper,
-  Stack,
-  Typography,
-  Link,
-} from "@mui/material";
-import Gustavo from "../assets/img/avatar.jpeg";
+import { Container, Grid, Paper, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { Icone } from "../UI/components.js";
-import GitHubRepo from "../components/GitHubRepo";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import EmailIcon from "@mui/icons-material/Email";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import {
   AWS,
   CSS,
@@ -34,13 +19,22 @@ import {
   VSCode,
 } from "../UI/svgs";
 import styled, { useTheme } from "styled-components";
+import LinkTree from "../components/LinkTree";
+import TreeIconsRow from "../components/TreeIconsRow";
+import TwoIconsRow from "../components/TwoIconsRow";
+import FourIconsRow from "../components/FourIconsRow";
+import AvatarGustavo from "../components/AvatarGustavo";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GitHubRepositories from "../components/GitHubRepositories";
+import Cursos from "../components/Cursos";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.body};
-  height: 100%;
+  min-height: 100vh;
+  max-height: max-content;
 `;
 
-const Home = () => {
+const Home = ({ tema }) => {
   const theme = useTheme();
 
   return (
@@ -51,25 +45,8 @@ const Home = () => {
             <Typography color={theme.text} variant="h2">
               Hi! I'm <strong>Gustavo</strong>
             </Typography>
-            <Avatar
-              src={Gustavo}
-              alt="Avatar Gustavo Fior"
-              sx={{ width: 100, height: 100, marginTop: 3 }}
-            />
-            <Stack marginTop={3} spacing={2} direction="row">
-              <Link href="https://www.instagram.com/gustavo.fior">
-                <InstagramIcon sx={{ color: theme.text }} />
-              </Link>
-              <Link href="mailto:gustavo_fior@outlook.com">
-                <EmailIcon sx={{ color: theme.text }} />
-              </Link>
-              <Link href="https://www.linkedin.com/in/gustavo-fior-a910781b4/">
-                <LinkedInIcon sx={{ color: theme.text }} />
-              </Link>
-              <Link href="https://www.github.com/gustavo-fior">
-                <GitHubIcon sx={{ color: theme.text }} />
-              </Link>
-            </Stack>
+            <AvatarGustavo width={100} height={100} />
+            <LinkTree theme={theme} />
             <Typography color={theme.text} variant="h5" marginTop={2}>
               I ♥ coding and surfing.
             </Typography>
@@ -87,59 +64,33 @@ const Home = () => {
           }}
           elevation={5}
         >
-          <Grid padding={5} container>
+          <Grid padding={3} container>
             <Grid item md={4}>
-              <Stack direction="row" spacing={3} height={50}>
-                <Typography marginTop={1}>Databases:</Typography>
-                <Icone src={MySql} />
-                <Icone src={Postgres} />
-              </Stack>
-              <Stack direction="row" spacing={3} marginTop={3} height={50}>
-                <Typography marginTop={1}>IDEs:</Typography>
-                <Icone src={Eclipse} />
-                <Icone src={VSCode} />
-              </Stack>
-              <Stack direction="row" spacing={3} marginTop={3} height={50}>
-                <Typography marginTop={1}>Languages:</Typography>
-                <Icone src={Java} />
-                <Icone src={JavaScript} />
-              </Stack>
-              <Stack direction="row" spacing={3} marginTop={3} height={50}>
-                <Typography marginTop={1}>Frameworks:</Typography>
-                <Icone src={Spring} />
-                <Icone src={ReactJS} />
-              </Stack>
-              <Stack direction="row" spacing={3} marginTop={3} height={50}>
-                <Typography marginTop={1}>Others:</Typography>
-                <Icone src={Heroku} />
-                <Icone src={HTML} />
-                <Icone src={CSS} />
-              </Stack>
-              <Stack direction="row" spacing={3} marginTop={3} height={50}>
-                <Typography marginTop={1}>Will study:</Typography>
-                <Icone src={AWS} />
-                <Icone src={MongoDB} />
-                <Icone src={Docker} />
-                <Icone src={Kubernetes} />
-              </Stack>
+              <TwoIconsRow text="Databases:" icon1={MySql} icon2={Postgres} />
+              <TwoIconsRow text="IDEs:" icon1={Eclipse} icon2={VSCode} />
+              <TwoIconsRow text="Languages:" icon1={Java} icon2={JavaScript} />
+              <TwoIconsRow text="Frameworks:" icon1={Spring} icon2={ReactJS} />
+              <TreeIconsRow
+                text="Others:"
+                icon1={Heroku}
+                icon2={HTML}
+                icon3={CSS}
+              />
+              <FourIconsRow
+                text="Will study:"
+                icon1={AWS}
+                icon2={MongoDB}
+                icon3={Docker}
+                icon4={Kubernetes}
+              />
             </Grid>
             <Grid item md={8}>
-              <GitHubRepo
-                name="news"
-                link="https://brazil-news.herokuapp.com"
-              />
-              <GitHubRepo
-                name="news-react"
-                link="https://branews.vercel.app/"
-              />
-              <GitHubRepo
-                name="alura-styled-components"
-                link="https://bytebank-neon.vercel.app/"
-              />
-              <GitHubRepo
-                name="gustavos-code"
-                link="https://gustavo-woad.vercel.app/"
-              />
+              <Router>
+                <Routes>
+                  <Route exact path="/" element={<GitHubRepositories />} />
+                  <Route exact path="/courses" element={<Cursos />} />
+                </Routes>
+              </Router>
             </Grid>
           </Grid>
         </Paper>

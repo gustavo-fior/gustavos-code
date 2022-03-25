@@ -5,6 +5,7 @@ import ThemeSwitcher from './components/ThemeSwitcher';
 import { dark, light } from './UI/themes';
 import { useState } from 'react';
 import { BtnTema } from './UI/components';
+import SpeedDialMenu from './components/SpeedDialMenu';
 
 function App() {
 
@@ -17,10 +18,11 @@ function App() {
   return (
     <>
       <ThemeProvider theme={tema ? light : dark}>
-          <BtnTema onClick={toggleTema}>
-            <ThemeSwitcher tema={tema} />
-          </BtnTema>
-          <Home />
+        <BtnTema onClick={toggleTema}>
+          <ThemeSwitcher tema={tema} />
+        </BtnTema>
+        <SpeedDialMenu />
+        <Home tema={tema}/>
       </ThemeProvider>
     </>
   );
