@@ -1,5 +1,5 @@
 import { Avatar } from "@mui/material";
-import Gustavo from "../../assets/img/avatar.jpeg";
+import Gustavo from "../../assets/img/avatar/avatar.jpeg";
 import React from "react";
 
 const AvatarGustavo = ({ width, height }) => {

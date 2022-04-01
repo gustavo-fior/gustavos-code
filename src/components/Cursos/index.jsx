@@ -1,13 +1,17 @@
-import { Paper, Stack } from "@mui/material";
+import { Alura, Softgraf } from "../../UI/svgs";
 import React from "react";
+import { useTheme } from "styled-components";
+import CursoAlura from "../CursoAlura/index";
+import CursoSoftgraf from "../CursoSoftgraf";
 
 const Cursos = () => {
+  const theme = useTheme();
+
   return (
-    <Stack direction="row" spacing={2}>
-      <Paper elevation={3} sx={{ height: 100, width: 100 }}>
-         [DEVELOPING]
-      </Paper>
-    </Stack>
+    <>
+      <CursoAlura icone={Alura}/>
+      <CursoSoftgraf icone={Softgraf} />
+    </>
   );
 };
 

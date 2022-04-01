@@ -1,14 +1,24 @@
-import GitHub from "@mui/icons-material/GitHub";
 import { SpeedDial, SpeedDialAction, SpeedDialIcon } from "@mui/material";
 import CardMembershipIcon from "@mui/icons-material/CardMembership";
+import styled, { useTheme } from "styled-components";
+import GitHub from "@mui/icons-material/GitHub";
 import React from "react";
-import { useTheme } from "styled-components";
+
+const ClasseSpeedDialMobile = styled(SpeedDial)`
+  position: "absolute";
+  bottom: 20;
+  right: 20;
+
+  @media only screen and (max-width: 600px) {
+    position: fixed;
+  }
+`;
 
 const SpeedDialMenu = () => {
   const theme = useTheme();
 
   return (
-    <SpeedDial
+    <ClasseSpeedDialMobile
       ariaLabel="SpeedDial menu"
       sx={{ position: "absolute", bottom: 20, right: 20 }}
       icon={<SpeedDialIcon />}
@@ -27,7 +37,7 @@ const SpeedDialMenu = () => {
         tooltipTitle={"Courses"}
         href="/courses"
       />
-    </SpeedDial>
+    </ClasseSpeedDialMobile>
   );
 };
 
