@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Grid, Paper, Stack, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Container, Grid, Paper } from "@mui/material";
 import {
   AWS,
   CSS,
@@ -19,14 +18,13 @@ import {
   VSCode,
 } from "../UI/svgs";
 import styled, { useTheme } from "styled-components";
-import LinkTree from "../components/LinkTree";
 import TreeIconsRow from "../components/TreeIconsRow";
 import TwoIconsRow from "../components/TwoIconsRow";
 import FourIconsRow from "../components/FourIconsRow";
-import AvatarGustavo from "../components/AvatarGustavo";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GitHubRepositories from "../components/GitHubRepositories";
 import Cursos from "../components/Cursos";
+import Bio from "../components/Bio";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.body};
@@ -34,28 +32,13 @@ const Body = styled.div`
   max-height: max-content;
 `;
 
-const Home = ({ tema }) => {
+const Home = () => {
   const theme = useTheme();
 
   return (
     <Body>
       <Container sx={{ backgroundColor: theme.body }}>
-        <Box display="flex" justifyContent="center" position="relative">
-          <Stack marginTop={5} alignItems="center">
-            <Typography color={theme.text} variant="h2">
-              Hi! I'm <strong>Gustavo</strong>
-            </Typography>
-            <AvatarGustavo width={100} height={100} />
-            <LinkTree theme={theme} />
-            <Typography color={theme.text} variant="h5" marginTop={2}>
-              I ♥ coding and surfing.
-            </Typography>
-            <Typography color={theme.text} variant="body1" marginTop={2}>
-              Here's the list of tools/languages that I like to use and some
-              cool stuff:
-            </Typography>
-          </Stack>
-        </Box>
+        <Bio />
         <Paper
           sx={{
             marginTop: 3,

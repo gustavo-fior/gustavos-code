@@ -16,15 +16,13 @@ function App() {
   };
 
   return (
-    <>
-      <ThemeProvider theme={tema ? light : dark}>
-        <BtnTema onClick={toggleTema}>
-          <ThemeSwitcher tema={tema} />
-        </BtnTema>
-        <SpeedDialMenu />
-        <Home tema={tema}/>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={tema ? light : dark}>
+      <BtnTema onClick={toggleTema}>
+        <ThemeSwitcher tema={tema} />
+      </BtnTema>
+      <SpeedDialMenu />
+      <Home />
+    </ThemeProvider>
   );
 }
 

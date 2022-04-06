@@ -9,7 +9,7 @@ const ClasseSpeedDialMobile = styled(SpeedDial)`
   bottom: 20;
   right: 20;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     position: fixed;
   }
 `;

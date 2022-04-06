@@ -7,12 +7,12 @@ const GitHubRepositories = () => {
       <GitHubRepo name="news" link="https://brazil-news.herokuapp.com" />
       <GitHubRepo name="news-react" link="https://branews.vercel.app/" />
       <GitHubRepo
-        name="alura-styled-components"
-        link="https://bytebank-neon.vercel.app/"
+        name="f1"
+        link="f1basic.vercel.app"
       />
       <GitHubRepo
         name="gustavos-code"
-        link="https://gustavo-woad.vercel.app/"
+        link="https://gustavoscode.vercel.app/"
       />
     </>
   );
